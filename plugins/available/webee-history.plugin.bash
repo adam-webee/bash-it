@@ -9,10 +9,13 @@ shopt -s histappend
 export HISTCONTROL=${HISTCONTROL:-ignorespace:erasedups}
 
 # limitless history
-export HISTSIZE=-1
+export HISTSIZE=limitless
+export HISTFILESIZE=limitless
 
 # Flush history to disk after each command.
 export PROMPT_COMMAND="history -a;${PROMPT_COMMAND}"
 
+# arrow up
 bind '"\e[A":history-search-backward'
+# arrow down
 bind '"\e[B":history-search-forward'
